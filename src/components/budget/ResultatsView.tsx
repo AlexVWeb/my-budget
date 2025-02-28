@@ -6,6 +6,7 @@ import {ArrowDownCircle, X} from 'lucide-react';
 import {Depense, ResultatsBudget} from '@/types/budget.ts';
 import {Cell, Pie, PieChart, ResponsiveContainer, Tooltip} from 'recharts';
 import {useState} from 'react';
+import {PEASimulator} from './PEASimulator';
 import {
     Select,
     SelectContent,
@@ -248,11 +249,11 @@ export const ResultatsView = ({resultats, depenses}: ResultatsViewProps) => {
                         {/* Détails des dépenses par compte */}
                         <div className="space-y-4">
                             <div className="flex justify-between items-center pb-2 border-b dark:border-gray-700">
-                                <span className="font-semibold dark:text-gray-300">Compte</span>
-                                <div className="flex gap-4">
-                                    <span className="font-semibold dark:text-gray-300">Fixe</span>
-                                    <span className="font-semibold dark:text-gray-300">Variable</span>
-                                    <span className="font-semibold dark:text-gray-300">Total</span>
+                                <span className="font-semibold dark:text-gray-300 w-1/3">Compte</span>
+                                <div className="flex w-2/3">
+                                    <span className="font-semibold dark:text-gray-300 w-1/3 text-right">Fixe</span>
+                                    <span className="font-semibold dark:text-gray-300 w-1/3 text-right">Variable</span>
+                                    <span className="font-semibold dark:text-gray-300 w-1/3 text-right">Total</span>
                                 </div>
                             </div>
 
@@ -260,15 +261,15 @@ export const ResultatsView = ({resultats, depenses}: ResultatsViewProps) => {
                                 .sort(([, a], [, b]) => b.total - a.total)
                                 .map(([compte, data], index) => (
                                     <div key={index} className="flex justify-between items-center">
-                                        <span className="dark:text-gray-300">{compte}</span>
-                                        <div className="flex gap-4">
-                                            <span className="w-20 text-right font-medium text-blue-600 dark:text-blue-400">
+                                        <span className="dark:text-gray-300 w-1/3">{compte}</span>
+                                        <div className="flex w-2/3">
+                                            <span className="w-1/3 text-right font-medium text-blue-600 dark:text-blue-400">
                                                 {data.fixe.toFixed(2)} €
                                             </span>
-                                            <span className="w-20 text-right font-medium text-purple-600 dark:text-purple-400">
+                                            <span className="w-1/3 text-right font-medium text-purple-600 dark:text-purple-400">
                                                 {data.variable.toFixed(2)} €
                                             </span>
-                                            <span className="w-20 text-right font-medium dark:text-gray-300">
+                                            <span className="w-1/3 text-right font-medium dark:text-gray-300">
                                                 {data.total.toFixed(2)} €
                                             </span>
                                         </div>
@@ -278,6 +279,9 @@ export const ResultatsView = ({resultats, depenses}: ResultatsViewProps) => {
                     </div>
                 </CardContent>
             </Card>
+
+            {/* Simulateur PEA */}
+            <PEASimulator />
         </div>
     );
 }; 
