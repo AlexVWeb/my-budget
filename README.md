@@ -1,54 +1,62 @@
-# React + TypeScript + Vite
+# My Smart Budget
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My Smart Budget est une application web moderne de gestion de finances personnelles qui vous aide à gérer votre budget de manière intelligente et intuitive.
 
-Currently, two official plugins are available:
+## 🌟 Fonctionnalités
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📊 Suivi détaillé des revenus et dépenses
+- 💰 Gestion des épargnes
+- 📈 Simulateur PEA intégré
+- 🌓 Mode sombre/clair
+- 📱 Interface responsive
+- 📊 Visualisations graphiques des dépenses
+- 🏦 Gestion multi-comptes
+- 🔄 Sauvegarde automatique des données
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Utilisées
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- shadcn/ui
+- Recharts pour les visualisations
+- LocalStorage pour la persistance des données
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 Installation
+
+1. Clonez le dépôt :
+```bash
+git clone [url-du-repo]
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Installez les dépendances :
+```bash
+npm install
 ```
+
+3. Lancez l'application en mode développement :
+```bash
+npm run dev
+```
+
+L'application sera accessible à l'adresse `http://localhost:5173`
+
+## 💡 Utilisation
+
+1. **Revenus** : Commencez par entrer vos sources de revenus mensuels
+2. **Dépenses** : Ajoutez vos dépenses en les catégorisant (fixes ou variables)
+3. **Épargne** : Définissez vos objectifs d'épargne
+4. **Analyse** : Visualisez la répartition de votre budget via les graphiques
+5. **Simulation** : Utilisez le simulateur PEA pour planifier vos investissements
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à :
+- Signaler des bugs
+- Proposer de nouvelles fonctionnalités
+- Soumettre des pull requests
+
+## 📝 License
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
