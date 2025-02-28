@@ -12,6 +12,7 @@ import {useLocalStorage} from './hooks/useLocalStorage';
 import {useBudgetCalculator} from './hooks/useBudgetCalculator';
 import {Depense} from './types/budget';
 import {COLORS, DEFAULT_DEPENSES} from './constants/colors';
+import { ThemeToggle } from './components/ThemeToggle';
 
 const App = () => {
     const {chargerDonnees, sauvegarderDonnees} = useLocalStorage();
@@ -191,14 +192,14 @@ const App = () => {
     };
 
     return (
-        <div className="p-4 max-w-6xl mx-auto">
-            <Card className="shadow-lg border-t-4 border-t-blue-500">
-                <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-t-lg">
+        <div className="p-4 max-w-6xl mx-auto min-h-screen bg-white dark:bg-gray-900 transition-colors">
+            <ThemeToggle />
+            <Card className="shadow-lg border-t-4 border-t-blue-500 dark:bg-gray-800 dark:border-blue-400">
+                <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-t-lg">
                     <div className="flex items-center justify-between">
                         <div>
-                            <CardTitle className="text-2xl font-bold text-blue-800">Smart Budget</CardTitle>
-                            <CardDescription className="text-blue-600">Gestion intelligente de vos finances
-                                personnelles</CardDescription>
+                            <CardTitle className="text-2xl font-bold text-blue-800 dark:text-blue-300">Smart Budget</CardTitle>
+                            <CardDescription className="text-blue-600 dark:text-blue-400">Gestion intelligente de vos finances personnelles</CardDescription>
                         </div>
                         <div className="flex items-center gap-4">
                             {notification && (
